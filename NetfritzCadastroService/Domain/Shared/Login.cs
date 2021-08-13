@@ -1,4 +1,4 @@
-﻿namespace NetfritzCadastroService.Domain.Shared
+﻿namespace NetfritzServices.CadastroService.Domain.Shared
 {
     public class Login
     {
@@ -7,7 +7,7 @@
             Email = email;
             Senha = senha;
         }
-        
+
         public string Email { get; private set; }
 
         public string Senha { get; private set; }

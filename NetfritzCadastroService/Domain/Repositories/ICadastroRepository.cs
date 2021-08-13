@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
-using NetfritzCadastroService.Domain.Models;
+using NetfritzServices.CadastroService.Domain.Models;
 
-namespace NetfritzCadastroService.Domain.Repositories
+namespace NetfritzServices.CadastroService.Domain.Repositories
 {
     public interface ICadastroRepository
     {

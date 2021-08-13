@@ -1,16 +1,16 @@
 ﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using NetfritzCadastroService.Domain.Models;
-using NetfritzCadastroService.Domain.Repositories;
-using NetfritzCadastroService.Domain.Shared;
+using NetfritzServices.CadastroService.Domain.Models;
+using NetfritzServices.CadastroService.Domain.Repositories;
+using NetfritzServices.CadastroService.Domain.Shared;
 
-namespace NetfritzCadastroService.Domain.Controladores
+namespace NetfritzServices.CadastroService.Domain.Controladores
 {
     public class CadastroControlador
     {
         private readonly ICadastroRepository _cadastroRepository;
-        
+
         public CadastroControlador(ICadastroRepository cadastroRepository)
         {
             _cadastroRepository = cadastroRepository;
@@ -31,7 +31,7 @@ namespace NetfritzCadastroService.Domain.Controladores
         public async Task<IActionResult> ObterClientePorId(string clienteId)
         {
             var cliente = await _cadastroRepository.obterClientePorId(clienteId);
-            
+
             if (cliente is null)
             {
                 return Response.CreateResponse("Cliente não encontrado", StatusCodes.Status404NotFound);
@@ -43,8 +43,8 @@ namespace NetfritzCadastroService.Domain.Controladores
         public async Task<IActionResult> InserirCliente(Cliente cliente)
         {
             var clienteDuplicated = await _cadastroRepository.obterClientePorId(cliente.Id);
-            
-            if (clienteDuplicated is null)
+
+            if (clienteDuplicated is not null)
             {
                 return Response.CreateResponse("Email já utilizado", StatusCodes.Status409Conflict);
             }
@@ -56,25 +56,25 @@ namespace NetfritzCadastroService.Domain.Controladores
         public async Task<IActionResult> AtualizarCliente(Cliente cliente)
         {
             var clienteToUpdate = await _cadastroRepository.obterClientePorId(cliente.Id);
-            
+
             if (clienteToUpdate is null)
             {
                 return Response.CreateResponse("Cliente não encontrado", StatusCodes.Status404NotFound);
             }
-            
+
             await _cadastroRepository.AtualizarCliente(cliente);
             return Response.CreateResponse("Cliente atualizado", StatusCodes.Status200OK);
         }
-        
+
         public async Task<IActionResult> RemoverCliente(string clienteId)
         {
             var clienteToUpdate = await _cadastroRepository.obterClientePorId(clienteId);
-            
+
             if (clienteToUpdate is null)
             {
                 return Response.CreateResponse("Cliente não encontrado", StatusCodes.Status404NotFound);
             }
-            
+
             await _cadastroRepository.AtualizarCliente(clienteToUpdate);
             return Response.CreateResponse("Cliente atualizado", StatusCodes.Status200OK);
         }

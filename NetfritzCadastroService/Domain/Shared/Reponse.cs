@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace NetfritzCadastroService.Domain.Shared
+namespace NetfritzServices.CadastroService.Domain.Shared
 {
     public class Response
     {

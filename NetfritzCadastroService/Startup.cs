@@ -5,11 +5,11 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
-using NetfritzCadastroService.Context;
-using NetfritzCadastroService.Domain.Repositories;
 using NetfritzCadastroService.Repositories;
+using NetfritzServices.CadastroService.Context;
+using NetfritzServices.CadastroService.Domain.Repositories;
 
-namespace NetfritzCadastroService
+namespace NetfritzServices.CadastroService
 {
     public class Startup
     {
@@ -27,21 +27,21 @@ namespace NetfritzCadastroService
 
             services.AddControllers()
                 .AddNewtonsoftJson();
-            
+
             services.AddDbContext<AppDbContext>(options =>
                 options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
-            
+
             services.AddScoped<ICadastroRepository, CadastroRepository>();
-            
+
             services.AddSwaggerGenNewtonsoftSupport();
 
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo {Title = "NetfritzCadastroService", Version = "v1"});
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "NetfritzCadastroService", Version = "v1" });
                 c.UseAllOfForInheritance();
             });
 
-            
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -52,7 +52,7 @@ namespace NetfritzCadastroService
                 .AllowAnyHeader()
                 .SetIsOriginAllowed(origin => true) // allow any origin
                 .AllowCredentials()); // allow credentials
-            
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

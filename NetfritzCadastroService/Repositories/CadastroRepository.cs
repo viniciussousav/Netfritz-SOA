@@ -1,8 +1,8 @@
 ﻿using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using NetfritzCadastroService.Context;
-using NetfritzCadastroService.Domain.Models;
-using NetfritzCadastroService.Domain.Repositories;
+using NetfritzServices.CadastroService.Context;
+using NetfritzServices.CadastroService.Domain.Models;
+using NetfritzServices.CadastroService.Domain.Repositories;
 
 namespace NetfritzCadastroService.Repositories
 {

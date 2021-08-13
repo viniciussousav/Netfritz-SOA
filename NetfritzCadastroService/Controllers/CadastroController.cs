@@ -1,9 +1,9 @@
 ﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using NetfritzCadastroService.Domain.Controladores;
-using NetfritzCadastroService.Domain.Models;
-using NetfritzCadastroService.Domain.Repositories;
-using NetfritzCadastroService.Domain.Shared;
+using NetfritzServices.CadastroService.Domain.Controladores;
+using NetfritzServices.CadastroService.Domain.Models;
+using NetfritzServices.CadastroService.Domain.Repositories;
+using NetfritzServices.CadastroService.Domain.Shared;
 
 namespace NetfritzCadastroService.Controllers
 {

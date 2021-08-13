@@ -1,8 +1,10 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
-namespace NetfritzCadastroService.Domain.Models
+namespace NetfritzServices.CadastroService.Domain.Models
 {
+    [Table("Clientes")]
     public class Cliente : Usuario
     {
         public Cliente(string nome, string email, string senha, string cartao, DateTime dataNascimento) : base(nome, email, senha)

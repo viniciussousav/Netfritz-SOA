@@ -2,11 +2,12 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace NetfritzCadastroService.Domain.Models
+namespace NetfritzServices.CadastroService.Domain.Models
 {
+    [Table("Usuarios")]
     public abstract class Usuario
     {
-        protected Usuario(string nome, string email, string senha)
+        public Usuario(string nome, string email, string senha)
         {
             Nome = nome;
             Email = email;
@@ -26,6 +27,6 @@ namespace NetfritzCadastroService.Domain.Models
         [Required]
         public string Senha { get; protected set; }
 
-        public DateTime DataCriacao { get; protected set;  }
+        public DateTime DataCriacao { get; protected set; }
     }
 }
