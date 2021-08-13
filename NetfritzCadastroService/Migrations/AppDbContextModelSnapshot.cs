@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using NetfritzServices.CadastroService.Context;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -18,7 +19,7 @@ namespace NetfritzServices.CadastroService.Migrations
                 .HasAnnotation("ProductVersion", "5.0.9")
                 .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
-            modelBuilder.Entity("NetfritzCadastroService.Domain.Models.Usuario", b =>
+            modelBuilder.Entity("NetfritzServices.CadastroService.Domain.Models.Usuario", b =>
                 {
                     b.Property<string>("Id")
                         .ValueGeneratedOnAdd()
@@ -44,16 +45,16 @@ namespace NetfritzServices.CadastroService.Migrations
                     b.ToTable("Usuarios");
                 });
 
-            modelBuilder.Entity("NetfritzCadastroService.Domain.Models.Administrador", b =>
+            modelBuilder.Entity("NetfritzServices.CadastroService.Domain.Models.Administrador", b =>
                 {
-                    b.HasBaseType("NetfritzCadastroService.Domain.Models.Usuario");
+                    b.HasBaseType("NetfritzServices.CadastroService.Domain.Models.Usuario");
 
                     b.ToTable("Administradores");
                 });
 
-            modelBuilder.Entity("NetfritzCadastroService.Domain.Models.Cliente", b =>
+            modelBuilder.Entity("NetfritzServices.CadastroService.Domain.Models.Cliente", b =>
                 {
-                    b.HasBaseType("NetfritzCadastroService.Domain.Models.Usuario");
+                    b.HasBaseType("NetfritzServices.CadastroService.Domain.Models.Usuario");
 
                     b.Property<string>("Cartao")
                         .IsRequired()
@@ -65,20 +66,20 @@ namespace NetfritzServices.CadastroService.Migrations
                     b.ToTable("Clientes");
                 });
 
-            modelBuilder.Entity("NetfritzCadastroService.Domain.Models.Administrador", b =>
+            modelBuilder.Entity("NetfritzServices.CadastroService.Domain.Models.Administrador", b =>
                 {
-                    b.HasOne("NetfritzCadastroService.Domain.Models.Usuario", null)
+                    b.HasOne("NetfritzServices.CadastroService.Domain.Models.Usuario", null)
                         .WithOne()
-                        .HasForeignKey("NetfritzCadastroService.Domain.Models.Administrador", "Id")
+                        .HasForeignKey("NetfritzServices.CadastroService.Domain.Models.Administrador", "Id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("NetfritzCadastroService.Domain.Models.Cliente", b =>
+            modelBuilder.Entity("NetfritzServices.CadastroService.Domain.Models.Cliente", b =>
                 {
-                    b.HasOne("NetfritzCadastroService.Domain.Models.Usuario", null)
+                    b.HasOne("NetfritzServices.CadastroService.Domain.Models.Usuario", null)
                         .WithOne()
-                        .HasForeignKey("NetfritzCadastroService.Domain.Models.Cliente", "Id")
+                        .HasForeignKey("NetfritzServices.CadastroService.Domain.Models.Cliente", "Id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

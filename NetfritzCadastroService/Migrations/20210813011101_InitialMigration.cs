@@ -1,9 +1,9 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace NetfritzCadastroService.Migrations
+namespace NetfritzServices.CadastroService.Migrations
 {
-    public partial class CreatingTables : Migration
+    public partial class InitialMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

@@ -18,7 +18,7 @@ namespace NetfritzServices.CadastroService.Domain.Controladores
 
         public async Task<IActionResult> Login(Login login)
         {
-            var usuario = await _cadastroRepository.login(login.Email, login.Senha);
+            var usuario = await _cadastroRepository.Login(login.Email, login.Senha);
 
             if (usuario is null)
             {
@@ -30,7 +30,7 @@ namespace NetfritzServices.CadastroService.Domain.Controladores
 
         public async Task<IActionResult> ObterClientePorId(string clienteId)
         {
-            var cliente = await _cadastroRepository.obterClientePorId(clienteId);
+            var cliente = await _cadastroRepository.ObterClientePorId(clienteId);
 
             if (cliente is null)
             {
@@ -42,7 +42,7 @@ namespace NetfritzServices.CadastroService.Domain.Controladores
 
         public async Task<IActionResult> InserirCliente(Cliente cliente)
         {
-            var clienteDuplicated = await _cadastroRepository.obterClientePorId(cliente.Id);
+            var clienteDuplicated = await _cadastroRepository.ObterClientePorId(cliente.Id);
 
             if (clienteDuplicated is not null)
             {
@@ -55,7 +55,7 @@ namespace NetfritzServices.CadastroService.Domain.Controladores
 
         public async Task<IActionResult> AtualizarCliente(Cliente cliente)
         {
-            var clienteToUpdate = await _cadastroRepository.obterClientePorId(cliente.Id);
+            var clienteToUpdate = await _cadastroRepository.ObterClientePorId(cliente.Id);
 
             if (clienteToUpdate is null)
             {
@@ -68,7 +68,7 @@ namespace NetfritzServices.CadastroService.Domain.Controladores
 
         public async Task<IActionResult> RemoverCliente(string clienteId)
         {
-            var clienteToUpdate = await _cadastroRepository.obterClientePorId(clienteId);
+            var clienteToUpdate = await _cadastroRepository.ObterClientePorId(clienteId);
 
             if (clienteToUpdate is null)
             {

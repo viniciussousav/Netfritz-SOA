@@ -5,7 +5,7 @@ using NetfritzServices.CadastroService.Domain.Models;
 using NetfritzServices.CadastroService.Domain.Repositories;
 using NetfritzServices.CadastroService.Domain.Shared;
 
-namespace NetfritzCadastroService.Controllers
+namespace NetfritzServices.CadastroService.Controllers
 {
     [ApiController]
     [Route("[controller]")]

@@ -15,14 +15,14 @@ namespace NetfritzCadastroService.Repositories
             _context = context;
         }
         
-        public async Task<Usuario> login(string email, string senha)
+        public async Task<Usuario> Login(string email, string senha)
         {
             return await _context.Usuarios
                 .AsNoTracking()
                 .FirstOrDefaultAsync(u => u.Email == email && u.Senha == senha);
         }
 
-        public async Task<Cliente> obterClientePorId(string clienteId)
+        public async Task<Cliente> ObterClientePorId(string clienteId)
         {
             return await _context.Clientes
                 .AsNoTracking()

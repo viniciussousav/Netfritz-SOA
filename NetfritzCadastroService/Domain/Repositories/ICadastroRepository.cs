@@ -5,9 +5,9 @@ namespace NetfritzServices.CadastroService.Domain.Repositories
 {
     public interface ICadastroRepository
     {
-        Task<Usuario> login(string email, string senha);
+        Task<Usuario> Login(string email, string senha);
 
-        Task<Cliente> obterClientePorId(string clienteId);
+        Task<Cliente> ObterClientePorId(string clienteId);
 
         Task InserirCliente(Cliente cliente);
 
