@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.31205.134
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetfritzServices.CadastroService", "NetfritzCadastroService\NetfritzServices.CadastroService.csproj", "{EB41D78F-1622-400E-A54D-6E44131023E4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetfritzServices.FitasService", "NetfritzServices.FitasService\NetfritzServices.FitasService.csproj", "{82BE997A-617B-40CB-AF6C-8DA9DB52DD6A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{EB41D78F-1622-400E-A54D-6E44131023E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EB41D78F-1622-400E-A54D-6E44131023E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EB41D78F-1622-400E-A54D-6E44131023E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82BE997A-617B-40CB-AF6C-8DA9DB52DD6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82BE997A-617B-40CB-AF6C-8DA9DB52DD6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82BE997A-617B-40CB-AF6C-8DA9DB52DD6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82BE997A-617B-40CB-AF6C-8DA9DB52DD6A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using NetfritzServices.CadastroService.Domain.Models;
@@ -28,6 +29,8 @@ namespace NetfritzServices.CadastroService.Domain.Controladores
             return Response.CreateResponse(usuario, StatusCodes.Status200OK);
         }
 
+
+
         public async Task<IActionResult> ObterClientePorId(string clienteId)
         {
             var cliente = await _cadastroRepository.ObterClientePorId(clienteId);
@@ -42,9 +45,11 @@ namespace NetfritzServices.CadastroService.Domain.Controladores
 
         public async Task<IActionResult> InserirCliente(Cliente cliente)
         {
-            var clienteDuplicated = await _cadastroRepository.ObterClientePorId(cliente.Id);
+            var clientes = await _cadastroRepository.ObterClientes();
 
-            if (clienteDuplicated is not null)
+            var emailDuplicated = clientes.Any(c => c.Email == cliente.Email);
+
+            if (emailDuplicated)
             {
                 return Response.CreateResponse("Email já utilizado", StatusCodes.Status409Conflict);
             }

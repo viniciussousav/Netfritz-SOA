@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace NetfritzServices.CadastroService.Domain.Shared
+namespace NetfritzServices.FitasService.Domain.Shared
 {
     public static class Response
     {
@@ -11,6 +11,5 @@ namespace NetfritzServices.CadastroService.Domain.Shared
                 StatusCode = status
             };
         }
-
     }
 }

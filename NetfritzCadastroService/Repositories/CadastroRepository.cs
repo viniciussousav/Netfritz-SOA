@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using NetfritzServices.CadastroService.Context;
 using NetfritzServices.CadastroService.Domain.Models;
@@ -20,6 +21,13 @@ namespace NetfritzCadastroService.Repositories
             return await _context.Usuarios
                 .AsNoTracking()
                 .FirstOrDefaultAsync(u => u.Email == email && u.Senha == senha);
+        }
+
+        public async Task<List<Cliente>> ObterClientes()
+        {
+            return await _context.Clientes
+                .AsNoTracking()
+                .ToListAsync();
         }
 
         public async Task<Cliente> ObterClientePorId(string clienteId)

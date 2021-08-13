@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using NetfritzServices.CadastroService.Domain.Models;
 
 namespace NetfritzServices.CadastroService.Domain.Repositories
@@ -7,6 +8,8 @@ namespace NetfritzServices.CadastroService.Domain.Repositories
     {
         Task<Usuario> Login(string email, string senha);
 
+        Task<List<Cliente>> ObterClientes();
+        
         Task<Cliente> ObterClientePorId(string clienteId);
 
         Task InserirCliente(Cliente cliente);
