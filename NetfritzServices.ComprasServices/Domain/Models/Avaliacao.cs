@@ -9,12 +9,18 @@ namespace NetfritzServices.ComprasServices.Domain.Models
 {
     public class Avaliacao
     {
+        public Avaliacao(string compraId, string descricao, int nota)
+        {
+            CompraId = compraId;
+            Descricao = descricao;
+            Nota = nota;
+        }
+
         [Key]
         public string Id { get; private set; }
 
         [Required]
         public string CompraId { get; private set; }
-        public Compra Compra { get; private set; }
 
         [Required]
         public string Descricao { get; private set; }

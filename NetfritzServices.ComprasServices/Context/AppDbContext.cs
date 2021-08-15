@@ -15,5 +15,7 @@ namespace NetfritzServices.ComprasServices.Context
         }
 
         public DbSet<Compra> Compras { get; set; }
+
+        public DbSet<Avaliacao> Avaliacaos { get; private set; }
     }
 }
