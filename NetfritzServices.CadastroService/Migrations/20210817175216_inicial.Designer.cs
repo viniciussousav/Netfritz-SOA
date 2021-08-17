@@ -10,8 +10,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace NetfritzServices.CadastroService.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20210813011101_InitialMigration")]
-    partial class InitialMigration
+    [Migration("20210817175216_inicial")]
+    partial class inicial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

@@ -30,7 +30,6 @@ namespace NetfritzServices.CadastroService.Domain.Controladores
         }
 
 
-
         public async Task<IActionResult> ObterClientePorId(string clienteId)
         {
             var cliente = await _cadastroRepository.ObterClientePorId(clienteId);

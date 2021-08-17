@@ -41,10 +41,7 @@ namespace NetfritzServices.ComprasServices.Repositories
 
         public async Task<List<Avaliacao>> ObterAvaliacoesPorUsuario(string clienteId)
         {
-            return await _context.Avaliacaos
-                .Include(a => a.Compra)
-                .Where(a => a.Compra.ClienteId == clienteId)
-                .ToListAsync();
+            return await _context.Avaliacaos.ToListAsync();
         }
     }
 }

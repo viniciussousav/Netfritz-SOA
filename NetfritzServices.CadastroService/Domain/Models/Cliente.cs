@@ -18,6 +18,5 @@ namespace NetfritzServices.CadastroService.Domain.Models
 
         [Required]
         public DateTime DataNascimento { get; private set; }
-        public object Any { get; internal set; }
     }
 }
