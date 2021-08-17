@@ -1,0 +1,22 @@
+version: '3.4'
+
+services:
+  netfritzservices.cadastroservice:
+    image: ${DOCKER_REGISTRY-}netfritzservicescadastroservice
+    build:
+      context: .
+      dockerfile: NetfritzServices.CadastroService/Dockerfile
+
+  netfritzservices.comprasservices:
+    image: ${DOCKER_REGISTRY-}netfritzservicescomprasservices
+    build:
+      context: .
+      dockerfile: NetfritzServices.ComprasServices/Dockerfile
+
+
+  netfritzservices.fitasservice:
+    image: ${DOCKER_REGISTRY-}netfritzservicesfitasservice
+    build:
+      context: .
+      dockerfile: NetfritzServices.FitasService/Dockerfile
+

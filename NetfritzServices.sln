@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetfritzServices.CadastroSe
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetfritzServices.FitasService", "NetfritzServices.FitasService\NetfritzServices.FitasService.csproj", "{82BE997A-617B-40CB-AF6C-8DA9DB52DD6A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetfritzServices.ComprasServices", "NetfritzServices.ComprasServices\NetfritzServices.ComprasServices.csproj", "{84B02353-EA7B-48BB-8C08-1675F0FF315F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetfritzServices.ComprasServices", "NetfritzServices.ComprasServices\NetfritzServices.ComprasServices.csproj", "{84B02353-EA7B-48BB-8C08-1675F0FF315F}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{176E51FF-DE36-4C3D-B33D-3894A18B8882}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{84B02353-EA7B-48BB-8C08-1675F0FF315F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{84B02353-EA7B-48BB-8C08-1675F0FF315F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{84B02353-EA7B-48BB-8C08-1675F0FF315F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{176E51FF-DE36-4C3D-B33D-3894A18B8882}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{176E51FF-DE36-4C3D-B33D-3894A18B8882}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{176E51FF-DE36-4C3D-B33D-3894A18B8882}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{176E51FF-DE36-4C3D-B33D-3894A18B8882}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
