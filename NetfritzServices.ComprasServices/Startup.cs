@@ -9,6 +9,8 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using NetfritzServices.ComprasServices.Context;
+using NetfritzServices.ComprasServices.Domain.Repositories;
+using NetfritzServices.ComprasServices.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,6 +34,8 @@ namespace NetfritzServices.ComprasServices
 
             services.AddControllers()
                 .AddNewtonsoftJson();
+
+            services.AddScoped<IComprasRepository, ComprasRepository>();
 
             services.AddHttpClient();
 
