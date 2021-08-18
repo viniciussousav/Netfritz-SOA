@@ -1,4 +1,4 @@
-version: '3.4'
+version: '3.6'
 
 services:
   netfritzservices.cadastroservice:
@@ -6,17 +6,22 @@ services:
     build:
       context: .
       dockerfile: NetfritzServices.CadastroService/Dockerfile
+    ports: 
+      - "8081:8081"
 
   netfritzservices.comprasservices:
     image: ${DOCKER_REGISTRY-}netfritzservicescomprasservices
     build:
       context: .
       dockerfile: NetfritzServices.ComprasServices/Dockerfile
-
+    ports: 
+      - "8083:8083"
 
   netfritzservices.fitasservice:
     image: ${DOCKER_REGISTRY-}netfritzservicesfitasservice
     build:
       context: .
       dockerfile: NetfritzServices.FitasService/Dockerfile
+    ports: 
+      - "8082:8082"
 

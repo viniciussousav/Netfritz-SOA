@@ -9,7 +9,7 @@ namespace NetfritzServices.ComprasServices.Requests
 {
     public class ClienteHttpRequest
     {
-        private const string base_url = "http://localhost:5001/cliente/";
+        private const string base_url = "https://localhost:6030/cadastro/cliente/";
         private readonly HttpClient httpClient;
 
 
@@ -20,9 +20,8 @@ namespace NetfritzServices.ComprasServices.Requests
 
         public async Task<bool> CheckClientExists(string clienteId)
         {
-            var request = new HttpRequestMessage(HttpMethod.Get, base_url + clienteId);
-            var response = await httpClient.SendAsync(request);
-
+            var url = new Uri(base_url + clienteId);
+            var response = await httpClient.GetAsync(url);
             if (response.IsSuccessStatusCode)
             {
                 return true;

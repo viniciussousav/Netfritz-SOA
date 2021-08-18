@@ -62,9 +62,9 @@ namespace NetfritzServices.ComprasServices.Domain.Controladores
                 await _comprasRepository.InserirCompra(compra);
                 return Response.CreateResponse("Compra realizada com sucesso", StatusCodes.Status201Created);
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                return Response.CreateResponse("Erro ao realizar operação", StatusCodes.Status500InternalServerError);
+                return Response.CreateResponse("Erro ao realizar operação " + e.Message, StatusCodes.Status500InternalServerError);
             }
         }
 

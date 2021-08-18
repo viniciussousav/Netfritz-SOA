@@ -8,7 +8,7 @@ namespace NetfritzServices.ComprasServices.Requests
 {
     public class FitaHttpRequest
     {
-        private const string base_url = "http://localhost:5002/fitas/";
+        private const string base_url = "https://localhost:6010/fitas/";
         private readonly HttpClient client;
 
         public FitaHttpRequest()
@@ -18,8 +18,8 @@ namespace NetfritzServices.ComprasServices.Requests
 
         public async Task<bool> CheckFitaExists(string fitaId)
         {
-            var request = new HttpRequestMessage(HttpMethod.Get, base_url + fitaId);
-            var response = await client.SendAsync(request);
+            var url = new Uri(base_url + fitaId);
+            var response = await client.GetAsync(url);
 
             if (response.IsSuccessStatusCode)
             {
